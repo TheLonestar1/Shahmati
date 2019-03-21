@@ -1,56 +1,119 @@
 #include<stdio.h>
 
-void Hod(char tab[][],int a,int b,int c,int d){
-    char temp = tab[a][b];
-    tab[a][b] = tab[c][d];
-    tab[c][d] = temp;
+
+typedef struct CHESS{
+	int player;
+	char klass;
+}CH;
+
+
+
+int logic(CH tab[9][9],int a,int b, int c, int d){
+	switch(tab[a][b].klass){
+		case 'p': 
+			if(((a-1 == c) || ((a-2 == c) && (a == 6))) && (b == d)){
+				return 1;
+			}
+			else return 0;
+		case 'r': 
+			if(((a == c) && (d != b)) || ((d == b) && (a != c))){
+				return 1;
+			}
+			else return 0;
+		case 'n': 
+			if((((a + 1) == c) && ((b + 2) == d)) || (((a + 1) == c) && ((b - 2) == d)) || (((a - 1) == c) && ((b + 2) == d)) || (((a - 1) == c) && ((b - 2) == d)) || (((a + 2) == c) && ((b + 1) == d)) || (((a + 2) == c) && ((b - 1) == d)) || (((a - 2) == c) && ((b + 1) == d)) || (((a - 2) == c) && ((b - 1) == d)) ) {
+				return 1;
+			}
+			else return 0;
+		case 'b': 
+			if(((a-c) == (b-d)) && (a != c) || ((a-c) == (d-b)) && (b != d)){
+				return 1;
+			}
+			else return 0;	
+		case 'k': 
+			if( (  (a == c) ||  (d == b) ) || ( ( (a-c) == (b-d)) || ((a-c) == (d-b)) ) && ((a - 2) < c < (a+2) && ((a-2) < d < (b + 2) ) ) ){
+				return 1;
+			}
+			else return 0;	
+		case 'q': 
+			if( (  (a == c) ||  (d == b) ) || ( ( (a-c) == (b-d)) || ((a-c) == (d-b)) ) ){
+				return 1;
+			}
+			else return 0;	
+	}
+}
+
+void Hod(CH tab[9][9],int a,int b,int c,int d,int *count){
+    if(logic(tab,a,b,c,d) == 1){
+		char temp = tab[a][b].klass;
+    	tab[a][b].klass = tab[c][d].klass;
+    	tab[c][d].klass = temp;
+	}
 }
 int convert(char word){
     switch(word){
         case 'A':
-            return 0;
-        case 'B':
             return 1;
-        case 'C':
+        case 'B':
             return 2;
-        case 'D':
+        case 'C':
             return 3;
-        case 'F':
+        case 'D':
             return 4;
-        case 'E':
+        case 'F':
             return 5;
-        case 'G':
+        case 'E':
             return 6;
-        case 'H':
+        case 'G':
             return 7;
+        case 'H':
+            return 8;
        }
     return 0;
 }
 
 int main(){
+
+	int counter_all[7] = {0};
     int num,num1;
     char word,word1;
-    char table[8][8] =
-    {
-    {'r','n','b','q','k','b','n','r'},
-    {'p','p','p','p','p','p','p','p'},
-    {' ',' ',' ',' ',' ',' ',' ',' '},
-    {' ',' ',' ',' ',' ',' ',' ',' '},
-    {' ',' ',' ',' ',' ',' ',' ',' '},
-    {' ',' ',' ',' ',' ',' ',' ',' '},
-    {'p','p','p','p','p','p','p','p'},
-    {'r','n','b','q','k','b','n','r'},
-    };
+    CH tab[9][9];
+    tab[9][9].klass;
+    //{
+   // {'/','1','2','3','4','5','6','7','8'},
+   // {'B','p','p','p','p','p','p','p','p'},
+  //  {'C',' ',' ',' ',' ',' ',' ',' ',' '},
+  //  {'D',' ',' ',' ',' ',' ',' ',' ',' '},
+  //  {'F',' ',' ',' ',' ',' ',' ',' ',' '},
+  //  {'E',' ',' ',' ',' ',' ',' ',' ',' '},
+   // {'G','p','p','p','p','p','p','p','p'},
+  //  {'H','r','n','b','q','k','b','n','r'},
+//	};
+	for(int i = 1; i < 9; i++){
+		tab[0][i].klass =  ;
+	}
+	for(int i = 3; i < 7; i++){
+		for(int j = 1; j < 9; j++){
+			tab[i][j].klass = ' ';
+		}
+	}
     while(1){   
-     for(int i = 0; i < 8; i++){
+     for(int i = 0; i < 9; i++){
+     	printf("%c ", tab[i][0].klass); 
         for(int j = 0; j < 8; j++){ 
-            printf("%c", table[i][j]);         
+            printf("%c", tab[i][j+1].klass);         
         }
         printf("\n");
     }
     printf("Vvedite vash hod(A4,B6)=");
+    
     scanf("%c%d,%c%d", &word, &num, &word1, &num1); 
-    Hod(*table,convert(word),num,convert(word1),num1);
-} 
-    return 0;   
+    if((1 <= num ) && ( num <= 8) && (1 <= num1 ) && ( num1 <= 8) && ('A' <= word ) && ( word <= 'H')&& ('A' <= word1 ) && ( word1 <= 'H')){
+    	Hod(tab,convert(word),num,convert(word1),num1,counter_all);
+	} else {
+		printf("Vvedeno nepravilno... Vvedite eshe raz\n");
+	}
+}
+ 
+    return 0;
 }
