@@ -1,15 +1,11 @@
 #include<stdio.h>
 
 
-typedef struct CHESS{
-	int player;
-	char klass;
-}CH;
 
 
 
-int logic(CH tab[9][9],int a,int b, int c, int d){
-	switch(tab[a][b].klass){
+int logic(char  tab[9][9],int a,int b, int c, int d){
+	switch(tab[a][b]){
 		case 'p': 
 			if(((a-1 == c) || ((a-2 == c) && (a == 6))) && (b == d)){
 				return 1;
@@ -41,13 +37,14 @@ int logic(CH tab[9][9],int a,int b, int c, int d){
 			}
 			else return 0;	
 	}
+	return 0;	
 }
 
-void Hod(CH tab[9][9],int a,int b,int c,int d,int *count){
+void Hod(char tab[9][9],int a,int b,int c,int d,int *count){
     if(logic(tab,a,b,c,d) == 1){
-		char temp = tab[a][b].klass;
-    	tab[a][b].klass = tab[c][d].klass;
-    	tab[c][d].klass = temp;
+		char temp = tab[a][b];
+    	tab[a][b] = tab[c][d];
+    	tab[c][d] = temp;
 	}
 }
 int convert(char word){
@@ -77,31 +74,23 @@ int main(){
 	int counter_all[7] = {0};
     int num,num1;
     char word,word1;
-    CH tab[9][9];
-    tab[9][9].klass;
-    //{
-   // {'/','1','2','3','4','5','6','7','8'},
-   // {'B','p','p','p','p','p','p','p','p'},
-  //  {'C',' ',' ',' ',' ',' ',' ',' ',' '},
-  //  {'D',' ',' ',' ',' ',' ',' ',' ',' '},
-  //  {'F',' ',' ',' ',' ',' ',' ',' ',' '},
-  //  {'E',' ',' ',' ',' ',' ',' ',' ',' '},
-   // {'G','p','p','p','p','p','p','p','p'},
-  //  {'H','r','n','b','q','k','b','n','r'},
-//	};
-	for(int i = 1; i < 9; i++){
-		tab[0][i].klass =  ;
-	}
-	for(int i = 3; i < 7; i++){
-		for(int j = 1; j < 9; j++){
-			tab[i][j].klass = ' ';
-		}
-	}
+    char tab[9][9] =
+    {
+    {'/','1','2','3','4','5','6','7','8'},
+    {'A','r','n','b','q','k','b','n','r'},
+    {'B','p','p','p','p','p','p','p','p'},
+    {'C',' ',' ',' ',' ',' ',' ',' ',' '},
+    {'D',' ',' ',' ',' ',' ',' ',' ',' '},
+    {'F',' ',' ',' ',' ',' ',' ',' ',' '},
+    {'E',' ',' ',' ',' ',' ',' ',' ',' '},
+    {'G','p','p','p','p','p','p','p','p'},
+    {'H','r','n','b','q','k','b','n','r'}
+    };
     while(1){   
      for(int i = 0; i < 9; i++){
-     	printf("%c ", tab[i][0].klass); 
+     	printf("%c ", tab[i][0]); 
         for(int j = 0; j < 8; j++){ 
-            printf("%c", tab[i][j+1].klass);         
+            printf("%c", tab[i][j+1]);         
         }
         printf("\n");
     }
