@@ -2,3 +2,9 @@ dist: xenial
 
 script:
   - git ls-files src/ | xargs clang-format -i && git diff --exit-code
+  
+  language: c
+  install: make get-deps
+  compiler:
+  - clang
+  - gcc
