@@ -36,7 +36,7 @@ int logic(int tab[9][9],int a,int b, int c, int d){
 	}
 }
 
-void Hod(int tab[9][9],int a,int b,int c,int d,char hod,char shma,int &mat){
+void Hod(int tab[9][9],int a,int b,int c,int d,char hod,char shma,int *mat){
     if((logic(tab,b,a,d,c) == 1) && (logic_trough(tab,b,a,d,c,hod) == 1) && ((logic_mat(tab,b,a,d,c,shma,mat) == 1) || (shma != '+'))&& ((logic_kill(tab,b,a,d,c,hod) == 1) || (hod != 'x') )&& ((logic_shah(tab,b,a,d,c,shma) == 1) || (shma != '#')) && ((hod == '-') || (hod == 'x'))){
 		int temp = tab[b][a];
     	tab[b][a] = tab[d][c];
@@ -73,7 +73,7 @@ int convert(char word){
        }
     return 0;
 }
-int logic_mat(int tab[9][9],int a, int b, int c,int d,char shma,int &mat){
+int logic_mat(int tab[9][9],int a, int b, int c,int d,char shma,int *mat){
 	if(shma != '+') return 0;
 		switch(tab[a][b]){
 		case 0: 
@@ -236,7 +236,7 @@ int logic_shah(int tab[9][9],int a, int b, int c,int d,char shma){
 	}
 }
 
-void logic_king(int tab[9][9],int a, int b, int &mat){
+void logic_king(int tab[9][9],int a, int b, int *mat){
 	
 	if((tab[a+1][b+1] != 8) || (tab[a][b+1] != 8) || (tab[a+1][b] != 8) || (tab[a-1][b+1] != 8) || (tab[a+1][b-1] != 8) || (tab[a][b-1] != 8) || (tab[a-1][b] != 8) || (tab[a-1][b-1] != 8) && (tab[a][b] == 10)){
 		mat = 1;	
