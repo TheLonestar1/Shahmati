@@ -16,11 +16,11 @@ unistall:
 $(BIN): $(OBJ)
 	gcc $(LINKOBJ) -o $(BIN)
 
-chess.o: chess.c  
-	gcc -Wall -MP -MMD -c chess.c -o chess.o 
+chess.o: src/chess.c  
+	gcc -Wall -MP -MMD -c src/chess.c -o src/chess.o 
 
-main.o: main.c
-	gcc -Wall -MP -MMD -c main.c -o main.o 
+main.o: src/main.c
+	gcc -Wall -MP -MMD -c src/main.c -o src/main.o 
 
-board_print_plain.o: board_print_plain.c
-	gcc -Wall -MP -MMD -c board_print_plain.c -o board_print_plain.o
+board_print_plain.o: src/board_print_plain.c
+	gcc -Wall -MP -MMD -c src/board_print_plain.c -o src/board_print_plain.o
