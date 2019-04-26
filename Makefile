@@ -1,10 +1,9 @@
 .PHONY: all clean install uninstall
 
-BIN      = Шахматы.exe
-OBJ      = chess.o main.o board_print_plain.o
-LINKOBJ  = chess.o main.o board_print_plain.o
+OBJ      = build/chess.o build/main.o build/board_print_plain.o
+LINKOBJ  = build/chess.o build/main.o build/board_print_plain.o
 
-all : $(BIN)
+all : bin/shah
 
 clean: 
 	rm -rf $(BIN) *.o  
@@ -13,14 +12,14 @@ install:
 unistall:
 	rm -rf /usr/local/bin/$(BIN)
 
-$(BIN): $(OBJ)
-	gcc $(LINKOBJ) -o $(BIN)
+bin/shah: $(OBJ)
+	gcc $(LINKOBJ) -o bin/shah
 
-chess.o: src/chess.c  
-	gcc -Wall -MP -MMD -c src/chess.c -o src/chess.o 
+build/chess.o: src/chess.c  
+	gcc -Wall -c src/chess.c -o build/chess.o 
 
-main.o: src/main.c
-	gcc -Wall -MP -MMD -c src/main.c -o src/main.o 
+build/main.o: src/main.c
+	gcc -Wall  -c src/main.c -o build/main.o 
 
-board_print_plain.o: src/board_print_plain.c
-	gcc -Wall -MP -MMD -c src/board_print_plain.c -o src/board_print_plain.o
+build/board_print_plain.o: src/board_print_plain.c
+	gcc -Wall  -c src/board_print_plain.c -o build/board_print_plain.o

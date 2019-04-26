@@ -20,7 +20,7 @@ int main(){
  {'H',1,5,2,3,4,2,5,1},
 };
     while(mat == 0){   
-    
+    system("clear");
     printTab(tab);
     printf("Vvedite vash hod(A4,B6)=");
     
