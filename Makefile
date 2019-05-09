@@ -28,7 +28,7 @@ bin/main-test: build_test/chess.o build_test/main.o build_test/board_print_plain
 	gcc -std=c99 build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o -o bin/main-test
 
 build_test/chess.o: src/chess.c  
-	gcc -Wall -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build/chess.o 
+	gcc -Wall -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build_test/chess.o 
 
 build_test/main.o: src/main.c
 	gcc -Wall -I thirdparty -I src -std=c99  -c src/main.c -MMD  -o build_test/main.o 
