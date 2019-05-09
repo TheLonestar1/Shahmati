@@ -31,10 +31,10 @@ build_test/chess.o: src/chess.c
 	gcc -Wall -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build/chess.o 
 
 build_test/main.o: src/main.c
-	gcc -Wall -I thirdparty -I src -std=c99  -c src/main.c -MMD  -o build/main.o 
+	gcc -Wall -I thirdparty -I src -std=c99  -c src/main.c -MMD  -o build_test/main.o 
 build_test/main.o: test/main.c
 	gcc -Wall -I thirdparty -I src -std=c99  -c test/main.c -MMD  -o build_test/main.o 
 build_test/board_print_plain.o: src/board_print_plain.c
-	gcc -Wall  -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build/board_print_plain.o
+	gcc -Wall  -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build_test/board_print_plain.o
 build_test/test.o: test/test.c
 	gcc -Wall -I thirdparty -I src -std=c99 -MMD  -c test/test.c -o build_test/test.o
