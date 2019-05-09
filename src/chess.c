@@ -41,8 +41,9 @@ int Hod(int tab[9][9],int a,int b,int c,int d,char hod,char shma,int *mat){
 		int temp = tab[b][a];
     	tab[b][a] = tab[d][c];
     	tab[d][c] = temp;
+	return 0;
 	}
-	else printf("Vvedeno nepravilno... Vvedite eshe raz\n");
+	return 1;
 }
 
 int logic_trough(int tab[9][9],int a, int b, int c,int d, char hod) {
