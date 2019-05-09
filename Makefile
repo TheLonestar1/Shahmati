@@ -22,15 +22,16 @@ build/main.o: src/main.c
 build/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall -std=c99  -c src/board_print_plain.c -o build/board_print_plain.o
 
-bin/main-test: build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o
-	gcc -std=c99 build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o -o bin/main-test
+bin/main-test: build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o
+	gcc -std=c99 build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o -o bin/main-test
 
 build_test/chess.o: src/chess.c  
 	gcc -Wall -I thirdparty src -std=c99 -c src/chess.c -o build/chess.o 
 
 build_test/main.o: src/main.c
 	gcc -Wall -I thirdparty src -std=c99  -c src/main.c -o build/main.o 
-
+build_test/main.o: test/main.c
+	gcc -Wall -std=c99  -c test/main.c -o build_test/main.o 
 build_test/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall  -I thirdparty src -std=c99 -c src/board_print_plain.c -o build/board_print_plain.o
 build_test/test.o: test/test.c
