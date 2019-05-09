@@ -36,7 +36,7 @@ int logic(int tab[9][9],int a,int b, int c, int d){
 	}
 }
 
-void Hod(int tab[9][9],int a,int b,int c,int d,char hod,char shma,int *mat){
+int Hod(int tab[9][9],int a,int b,int c,int d,char hod,char shma,int *mat){
     if((logic(tab,b,a,d,c) == 1) && (logic_trough(tab,b,a,d,c,hod) == 1) && ((logic_mat(tab,b,a,d,c,shma,mat) == 1) || (shma != '+'))&& ((logic_kill(tab,b,a,d,c,hod) == 1) || (hod != 'x') )&& ((logic_shah(tab,b,a,d,c,shma) == 1) || (shma != '#')) && ((hod == '-') || (hod == 'x'))){
 		int temp = tab[b][a];
     	tab[b][a] = tab[d][c];
