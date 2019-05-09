@@ -25,7 +25,7 @@ CTEST(get_out_table,chess_test){
 	hod = '-';
 	word = 'Z';
 	num = 9;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_peshki,chess_test){
 	int shah = 1;
@@ -49,7 +49,7 @@ CTEST(Hod_peshki,chess_test){
 	hod = '-';
 	word = 'E';
 	num = 1;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_rook,chess_test){
 	int shah = 1;
@@ -73,7 +73,7 @@ CTEST(Hod_rook,chess_test){
 	hod = '-';
 	word = 'F';
 	num = 1;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_clon,chess_test){
 	int shah = 1;
@@ -97,7 +97,7 @@ CTEST(Hod_clon,chess_test){
 	hod = '-';
 	word = 'E';
 	num = 5;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_Knigt,chess_test){
 	int shah = 1;
@@ -121,7 +121,7 @@ CTEST(Hod_Knigt,chess_test){
 	hod = '-';
 	word = 'E';
 	num = 3;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_qeen,chess_test){
 	int shah = 1;
@@ -145,7 +145,7 @@ CTEST(Hod_qeen,chess_test){
 	hod = '-';
 	word = 'D';
 	num = 5;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_king,chess_test){
 	int shah = 1;
@@ -169,6 +169,6 @@ CTEST(Hod_king,chess_test){
 	hod = '-';
 	word = 'F';
 	num = 5;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat))
+	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 
