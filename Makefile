@@ -22,7 +22,7 @@ build/main.o: src/main.c
 build/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall -std=c99  -c src/board_print_plain.c -o build/board_print_plain.o
 
--include build-test/*.d
+-include build_test/*.d
 
 bin/main-test: build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o
 	gcc -std=c99 build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o -o bin/main-test
