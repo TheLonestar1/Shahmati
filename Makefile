@@ -31,7 +31,7 @@ build_test/chess.o: src/chess.c
 build_test/main.o: src/main.c
 	gcc -Wall -I thirdparty src -std=c99  -c src/main.c -MMD  -o build/main.o 
 build_test/main.o: test/main.c
-	gcc -Wall -std=c99  -c test/main.c -MMD  -o build_test/main.o 
+	gcc -Wall -I thirdparty src -std=c99  -c test/main.c -MMD  -o build_test/main.o 
 build_test/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall  -I thirdparty src -std=c99 -c src/board_print_plain.c -MMD -o build/board_print_plain.o
 build_test/test.o: test/test.c
