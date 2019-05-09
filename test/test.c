@@ -25,7 +25,7 @@ CTEST(get_out_table,chess_test){
 	hod = '-';
 	word = 'Z';
 	num = 9;
-	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
+	ASSERT_EQUAL(1,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_peshki,chess_test){
 	int shah = 1;
