@@ -1,7 +1,7 @@
 .PHONY: all clean install uninstall
 
-OBJ      = build/chess.o build/main.o build/board_print_plain.o
-LINKOBJ  = build/chess.o build/main.o build/board_print_plain.o
+OBJ      = build/src/chess.o build/src/main.o build/src/board_print_plain.o
+LINKOBJ  = build/src/chess.o build/src/main.o build/src/board_print_plain.o
 
 all : bin/shah
 
@@ -15,25 +15,25 @@ clean_test:
 bin/shah: $(OBJ)
 	gcc -std=c99 $(LINKOBJ) -o bin/shah
 
-build/chess.o: src/chess.c  
-	gcc -Wall -std=c99 -c src/chess.c -o build/chess.o 
+build/src/chess.o: src/chess.c  
+	gcc -Wall -Weror -std=c99 -c src/chess.c -o build/src/chess.o 
 
-build/main.o: src/main.c
-	gcc -Wall -std=c99  -c src/main.c -o build/main.o 
+build/src/main.o: src/main.c
+	gcc -Wall -Weror -std=c99  -c src/main.c -o build/src/main.o 
 	
-build/board_print_plain.o: src/board_print_plain.c
-	gcc -Wall -std=c99  -c src/board_print_plain.c -o build/board_print_plain.o
+build/src/board_print_plain.o: src/board_print_plain.c
+	gcc -Wall -Weror -std=c99  -c src/board_print_plain.c -o build/src/board_print_plain.o
 
 -include build_test/*.d
 
-bin/main-test: build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o build_test/main.o
-	gcc -O0 -g -std=c99 build_test/chess.o build_test/main.o build_test/board_print_plain.o build_test/test.o -o bin/main-test
+bin/main-test: build/test/test/chess.o build/test/board_print_plain.o build/test/test.o build/test/main.o
+	gcc -Weror -std=c99 build/test/chess.o build/test/main.o build/test/board_print_plain.o build/test/test.o -o bin/main-test
 
-build_test/chess.o: src/chess.c  
-	gcc -Wall -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build_test/chess.o 
-build_test/main.o: test/main.c
-	gcc -Wall -I thirdparty -I src -std=c99  -c test/main.c -MMD  -o build_test/main.o 
-build_test/board_print_plain.o: src/board_print_plain.c
-	gcc -Wall  -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build_test/board_print_plain.o
-build_test/test.o: test/test.c
-	gcc -Wall -I thirdparty -I src -std=c99 -MMD  -c test/test.c -o build_test/test.o
+build/test/chess.o: src/chess.c  
+	gcc -Wall -Weror -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build/test/chess.o 
+bbuild/test/main.o: test/main.c
+	gcc -Wall  -Weror -I thirdparty -I src -std=c99  -c test/main.c -MMD  -o build/test/main.o 
+build/test/board_print_plain.o: src/board_print_plain.c
+	gcc -Wall -Weror -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build/test/board_print_plain.o
+bbuild/test/test.o: test/test.c
+	gcc -Wall -Weror -I thirdparty -I src -std=c99 -MMD  -c test/test.c -o build/testtest.o
