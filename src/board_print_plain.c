@@ -45,4 +45,5 @@ char converts(int tab[9][9], int i, int j){
         case 8:
             return ' ';
        }
+	return 0;
 }

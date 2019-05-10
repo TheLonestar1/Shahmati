@@ -3,10 +3,9 @@
 
 int main(){
 
-	int shah = 1;
-	int mat = 0;
+
     int num,num1;
-    char word,word1,hod,shma;
+    char word,word1,hod;
 	int tab[9][9] = 
    {
  {'/','1','2','3','4','5','6','7','8'},
@@ -19,20 +18,18 @@ int main(){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-    while(mat == 0){   
+    while(1){   
     system("clear");
     printTab(tab);
     printf("Vvedite vash hod(A4,B6)=");
     
-    scanf("%c%d%c%c%d%c", &word, &num,&hod, &word1, &num1, &shma); 
+    scanf("%c%d%c%c%d", &word, &num,&hod, &word1, &num1); 
     if((1 <= num ) && ( num <= 8) && (1 <= num1 ) && ( num1 <= 8) && ('A' <= word ) && ( word <= 'H')&& ('A' <= word1 ) && ( word1 <= 'H')){
-    	Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat);
+    	Hod(tab,convert(word),num,convert(word1),num1,hod);
 	} else {
 		printf("Vvedeno nepravilno... Vvedite eshe raz\n");
 	}
-	if(mat == 1) {
-		printf("you win!!!\n");
-	}
+	
 }
  
     return 0;
