@@ -35,5 +35,5 @@ bbuild/test/main.o: test/main.c
 	gcc -Wall   -I thirdparty -I src -std=c99  -c test/main.c -MMD  -o build/test/main.o 
 build/test/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall  -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build/test/board_print_plain.o
-bbuild/test/test.o: test/test.c
-	gcc -Wall  -I thirdparty -I src -std=c99 -MMD  -c test/test.c -o build/testtest.o
+build/test/test.o: test/test.c
+	gcc -Wall  -I thirdparty -I src -std=c99 -MMD  -c test/test.c -o build/test/test.o
