@@ -9,7 +9,7 @@ test : bin/main-test
 
 clean: 
 	rm -rf $(BIN) build/test/*.o  
-clean: 
+clean_test: 
 	rm -rf $(BIN) build/src/*.o  
 
 bin/shah: $(OBJ)
