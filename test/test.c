@@ -44,11 +44,11 @@ CTEST(Hod_peshki,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-	word = 'G';
-	num = 1;
+	word = 'A';
+	num = 7;
 	hod = '-';
-	word1 = 'E';
-	num1 = 1;
+	word1 = 'A';
+	num1 = 6;
 	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_rook,chess_test){
@@ -68,11 +68,11 @@ CTEST(Hod_rook,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-	word = 'H';
-	num = 1;
+	word = 'A';
+	num = 8;
 	hod = '-';
-	word1 = 'F';
-	num1 = 1;
+	word1 = 'A';
+	num1 = 4;
 	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_clon,chess_test){
@@ -92,11 +92,11 @@ CTEST(Hod_clon,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-	word = 'H';
-	num = 3;
+	word = 'C';
+	num = 8;
 	hod = '-';
-	word1 = 'E';
-	num1 = 5;
+	word1 = 'F';
+	num1 = 6;
 	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_Knigt,chess_test){
@@ -116,11 +116,11 @@ CTEST(Hod_Knigt,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-	word = 'H';
-	num = 2;
+	word = 'B';
+	num = 8;
 	hod = '-';
-	word1 = 'E';
-	num1 = 3;
+	word1 = 'C';
+	num1 = 6;
 	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_qeen,chess_test){
@@ -140,11 +140,11 @@ CTEST(Hod_qeen,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,3,4,2,5,1},
 };
-	word = 'H';
-	num = 5;
+	word = 'F';
+	num = 8;
 	hod = '-';
-	word1 = 'D';
-	num1 = 5;
+	word1 = 'F';
+	num1 = 3;
 	ASSERT_EQUAL(0,Hod(tab,convert(word),num,convert(word1),num1,hod,shma,mat));
 }
 CTEST(Hod_king,chess_test){
@@ -164,8 +164,8 @@ CTEST(Hod_king,chess_test){
  {'G',0,0,0,0,0,0,0,0},
  {'H',1,5,2,8,4,2,5,1},
 };
-	word = 'F';
-	num = 4;
+	word = 'D';
+	num = 5;
 	hod = '-';
 	word1 = 'F';
 	num1 = 5;
