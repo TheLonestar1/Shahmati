@@ -8,7 +8,9 @@ all : bin/shah
 test : bin/main-test
 
 clean: 
-	rm -rf $(BIN) build/*.o  
+	rm -rf $(BIN) build/test/*.o  
+clean: 
+	rm -rf $(BIN) build/src/*.o  
 
 bin/shah: $(OBJ)
 	gcc -std=c99 $(LINKOBJ) -o bin/shah
