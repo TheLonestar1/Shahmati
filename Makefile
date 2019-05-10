@@ -26,7 +26,7 @@ build/src/board_print_plain.o: src/board_print_plain.c
 
 -include build_test/*.d
 
-bin/main-test: build/test/test/chess.o build/test/board_print_plain.o build/test/test.o build/test/main.o
+bin/main-test: build/test/chess.o build/test/board_print_plain.o build/test/test.o build/test/main.o
 	gcc  -std=c99 build/test/chess.o build/test/main.o build/test/board_print_plain.o build/test/test.o -o bin/main-test
 
 build/test/chess.o: src/chess.c  
