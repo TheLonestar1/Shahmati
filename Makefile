@@ -32,7 +32,7 @@ bin/main-test: build/test/chess.o build/test/board_print_plain.o build/test/test
 
 build/test/chess.o: src/chess.c  
 	gcc -Wall  -I thirdparty -I src -std=c99 -c src/chess.c -MMD  -o build/test/chess.o 
-bbuild/test/main.o: test/main.c
+build/test/main.o: test/main.c
 	gcc -Wall   -I thirdparty -I src -std=c99  -c test/main.c -MMD  -o build/test/main.o 
 build/test/board_print_plain.o: src/board_print_plain.c
 	gcc -Wall  -I thirdparty -I src -std=c99 -c src/board_print_plain.c -MMD -o build/test/board_print_plain.o
