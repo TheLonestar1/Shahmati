@@ -19,20 +19,19 @@ AlwaysBreakTemplateDeclarations: true
 BinPackArguments: false
 BinPackParameters: false
 BraceWrapping:   
-  AfterClass:      false
-  AfterControlStatement: false
-  AfterEnum:       false
-  AfterFunction:   true
-  AfterNamespace:  false
-  AfterStruct:     false
-  AfterUnion:      false
-  AfterExternBlock: false
-  BeforeCatch:     false
-  BeforeElse:      false
-  IndentBraces:    false
-  SplitEmptyFunction: true
-  SplitEmptyRecord: true
-  SplitEmptyNamespace: true
+AfterClass:      false
+AfterControlStatement: false
+AfterEnum:       false
+AfterFunction:   true
+AfterNamespace:  false
+AfterStruct:     false
+AfterUnion:      false
+BeforeCatch:     false
+BeforeElse:      false
+IndentBraces:    false
+SplitEmptyFunction: true
+SplitEmptyRecord: true
+SplitEmptyNamespace: true
 BreakBeforeBinaryOperators: All
 BreakBeforeBraces: Custom
 BreakBeforeInheritanceComma: false
