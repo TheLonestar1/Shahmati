@@ -195,8 +195,12 @@ int convert(char word)
                         }
                         
 
+
+
         }
         
+
+
 
 }*/
 int logic_kill(int tab[9][9], int a, int b, int c, int d, char hod)
@@ -211,6 +215,8 @@ int logic_kill(int tab[9][9], int a, int b, int c, int d, char hod)
 }
 /*int logic_shah(int tab[9][9],int a, int b, int c,int d,char shma){
         
+
+
 
         if(shma != '#') return 0;
         switch(tab[a][b]){
@@ -260,11 +266,15 @@ return 1; if(tab[i][d] == 10) return 1;
                         }
                         
 
+
+
         }
 }
 
 void logic_king(int tab[9][9],int a, int b, int *mat){
         
+
+
 
         if((tab[a+1][b+1] != 8) || (tab[a][b+1] != 8) || (tab[a+1][b] != 8) ||
 (tab[a-1][b+1] != 8) || (tab[a+1][b-1] != 8) || (tab[a][b-1] != 8) ||

@@ -1,5 +1,5 @@
-#ifndef PRINT
-#define PRINT
+#ifndef GRANDPARENT_H
+#define GRANDPARENT_H
 #include<stdio.h>
 #include<stdlib.h>
 #endif
